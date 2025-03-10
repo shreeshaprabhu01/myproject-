@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz - PCM</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <audio id="myAudio" autoplay loop>
+        <source src="/excel voice.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="container">
+        <h1>Science Quiz - PCM (1st PUC)</h1>
+        <p>Answer all 10 questions correctly to win a ₹5000 discount on college admission! (Show the screenshot during admission)</p>
+        
+        <div id="quiz-container">
+            <p id="question-text"></p>
+            <div id="options"></div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+        
+        <p class="discount" id="result"></p>
+    </div>
+    
+    <script src="script.js"></script>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('myAudio');
+            
+            
+            audio.play().catch(function(error) {
+                console.log('Autoplay prevented initially:', error);
+            });
+            
+          
+            document.body.addEventListener('click', function() {
+                audio.play();
+                audio.muted = false;
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>
